@@ -6,8 +6,11 @@ CMD /bin/bash
 ENV PATH ./node_modules/.bin:$PATH
 ADD package.json /ff/
     # Install NodeJS & Java
-RUN curl --silent --location https://deb.nodesource.com/setup_4.x | sudo bash - && \
-    apt-get install -y nodejs build-essential openjdk-7-jre-headless && \
+RUN curl --silent --location https://deb.nodesource.com/setup_4.x | bash - && \
+    wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - && \
+    sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' && \
+    apt-get update && \
+    apt-get install -y nodejs build-essential openjdk-7-jre-headless xvfb google-chrome-stable firefox && \
     ln -s /usr/bin/nodejs /usr/sbin/node && \
     # Install Node packages
     cd ff && npm install && \
