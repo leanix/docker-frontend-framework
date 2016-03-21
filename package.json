@@ -1,13 +1,13 @@
 {
   "name": "docker-frontend-framework",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Contains supporting frameworks for LeanIX frontend builds and tests",
   "private": true,
   "dependencies": {
   },
   "devDependencies": {
-    "protractor": "3.0.0",
-    "protractor-jasmine2-html-reporter": "0.0.5",
+    "protractor": "3.1.1",
+    "protractor-jasmine2-html-reporter": "0.0.6",
     "jasmine-reporters": "2.0.7",
     "jasmine-spec-reporter": "2.4.0",
     "jasmine2-custom-message": "0.8.0",
